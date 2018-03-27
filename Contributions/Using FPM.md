@@ -8,11 +8,10 @@ Another advantage, especially for local development, is that PHP may run as your
 2. `brew tap homebrew/homebrew-php` # See caveats
 3. `brew install php70` # See caveats
 4. Edit Apache main conf file: `$(brew --prefix)/etc/httpd/httpd.conf`
-
-        a. Uncomment: `LoadModule proxy_module  lib/httpd/modules/mod_proxy.so`
-        b. Uncomment: `LoadModule proxy_fcgi_module  lib/httpd/modules/mod_proxy_fcgi.so`
-        c. Uncomment: `LoadModule vhost_alias_module  lib/httpd/modules/mod_vhost_alias.so`
-        d. Uncomment: `Include /usr/local/etc/httpd/extra/httpd-vhosts.conf`
+    1. Uncomment: `LoadModule proxy_module  lib/httpd/modules/mod_proxy.so`
+    1. Uncomment: `LoadModule proxy_fcgi_module  lib/httpd/modules/mod_proxy_fcgi.so`
+    1. Uncomment: `LoadModule vhost_alias_module  lib/httpd/modules/mod_vhost_alias.so`
+    1. Uncomment: `Include /usr/local/etc/httpd/extra/httpd-vhosts.conf`
 
 Now you can use `brew services` to start Apache and PHP-FPM. **NB**: If you want to listen on port 80 and 443, then you need to start Apache with `sudo`. Example: `sudo brew services restart httpd && brew services restart php70`
 
